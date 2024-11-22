@@ -1,0 +1,313 @@
+@import './_settings';
+@import 'foundation';
+
+@include foundation-everything($prototype: true);
+
+// here you write your own styles
+
+
+hr {
+    width: $hr-width;
+}
+
+/// @type List
+$panel-margin: rem-calc(20 10);
+
+/// @type Color
+$panel-container-background-color: $black !default;
+
+/// @type List
+$panel-container-radius: $global-radius !default;
+
+/// @type Number
+$panel-header-border-bottom-width: rem-calc(4) !default;
+
+/// @type Color
+$panel-header-border-bottom-color: $black !default;
+
+/// @type Color
+$panel-header-color: $white;
+
+/// @type Number
+$panel-header-font-size: rem-calc(26) !default;
+
+/// @type Color
+$post-item-border-bottom-color: $white !default;
+
+/// @type Number
+$post-item-border-bottom-width: rem-calc(1) !default;
+
+@mixin small-posts-list {
+  .posts-list {
+    .post-title {
+      font-size: rem-calc(18);
+      color: $white;
+    }
+
+    .post-meta {
+      font-size: rem-calc(12);
+      color: $white;
+    }
+
+    .post-summary {
+      font-size: rem-calc(12);
+      color: $white;
+    }
+
+    .post-read-more {
+      display: none;
+    }
+  }
+}
+
+.posts-panel {
+  @include grid-col-row();
+  float: none !important;
+  margin: $panel-margin;
+  background-color: $panel-container-background-color;
+  border-radius: $panel-container-radius;
+  box-shadow: rem-calc(0 0 4 0) rgba(0, 0, 0, 0.2);
+
+  .panel-header {
+    @include grid-col-row();
+    border-bottom: $panel-header-border-bottom-width solid $panel-header-border-bottom-color;
+
+    .panel-title {
+      margin: 0;
+      padding: rem-calc(15 0);
+      color: $panel-header-color;
+      font-size: $panel-header-font-size;
+    }
+  }
+
+  .panel-content {
+    padding: rem-calc(15 0);
+    color: $white;
+  }
+
+  .pinned-post,
+  .posts-list {
+    @include grid-col-row($gutters: 0);
+  }
+
+  .posts-list {
+    .post-item:not(:last-child) {
+      border-bottom: $post-item-border-bottom-width solid $post-item-border-bottom-color;
+    }
+  }
+
+  .post-item {
+    @include grid-row();
+    padding: rem-calc(15 0);
+
+    .post-thumbnail {
+      display: block;
+      @include grid-column($columns: 4);
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .post-text {
+      @include grid-column($columns: 8);
+
+      p {
+        margin: 0;
+        color: $white;
+      }
+    }
+
+    .post-title {
+      font-size: rem-calc(26);
+      color: $white;
+    }
+
+    .post-meta {
+      color: $white;
+      font-size: rem-calc(14);
+    }
+
+    .meta {
+      display: inline-block;
+      margin-#{$global-right}: rem-calc(15);
+      color: $white;
+    }
+
+    .meta-icon,
+    .meta-text {
+      display: inline-block;
+      padding-#{$global-right}: rem-calc(5);
+      color: $white;
+    }
+
+    .post-summary {
+      color: $white;
+    }
+
+    .post-read-more {
+      display: block;
+      font-size: rem-calc(14);
+      color: $white;
+
+      .fa {
+        padding: rem-calc(0 5);
+        color: $white;
+      }
+    }
+  }
+
+  .pinned-post {
+    .post-item {
+      border-bottom: $post-item-border-bottom-width solid $post-item-border-bottom-color;
+    }
+    .post-thumbnail {
+      display: block;
+      @include grid-col-row();
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .post-text {
+      @include grid-col-row();
+      margin-top: rem-calc(15);
+      color: $white;
+    }
+  }
+
+  @include breakpoint(small only) {
+    @include small-posts-list;
+  }
+
+  @include breakpoint(medium only) {
+    .posts-list {
+      .post-title {
+        font-size: rem-calc(20);
+        color: $white;
+      }
+
+      .post-meta {
+        font-size: rem-calc(14);
+        color: $white;
+      }
+
+      .post-summary {
+        font-size: rem-calc(14);
+        color: $white;
+      }
+    }
+  }
+
+  &.grid {
+    .pinned-post,
+    .posts-list {
+      @include grid-column($columns: 6, $gutters: 0);
+
+      @include breakpoint(small only) {
+        @include grid-col-row($gutters: 0);
+      }
+    }
+
+    .pinned-post {
+      .post-item {
+        border: 0;
+      }
+    }
+
+    @include small-posts-list;
+  }
+}
+.posts-panel {
+    @include grid-col-row();
+    float: none !important;
+    margin: $panel-margin au;
+    background-color: $panel-container-background-color;
+    border-radius: $panel-container-radius;
+    box-shadow: rem-calc(0 0 4 0) rgba(0, 0, 0, .2);
+    width: fit-content;
+  }
+
+
+@mixin circle-graph-circle($size) {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: calc(50% - #{$size/2});
+    top: calc(50% - #{$size/2});
+    width: $size;
+    height: $size;
+  }
+  
+  $circle-graph-size: rem-calc(180);
+  $circle-graph-percent-number-size: rem-calc(24);
+  $circle-graph-percent-unit-size: rem-calc(16);
+  $circle-graph-background-color: $light-gray;
+  $circle-graph-empty-color: $black;
+  $circle-graph-fill-color: $dark-gray;
+  
+  .circle-graph {
+    width: $circle-graph-size;
+    height: $circle-graph-size;
+    border-radius: 50%;
+    background-color: $circle-graph-empty-color;
+    position: relative;
+  
+    &.gt-50 {
+      background-color: $circle-graph-fill-color;
+    }
+  }
+  
+  .circle-graph-progress {
+    @include circle-graph-circle($circle-graph-size);
+    clip: rect(0, $circle-graph-size, $circle-graph-size, #{$circle-graph-size/2});
+  
+    .circle-graph-progress-fill {
+      @include circle-graph-circle($circle-graph-size);
+      clip: rect(0, #{$circle-graph-size/2}, $circle-graph-size, 0);
+      background: $circle-graph-fill-color;
+      transform: rotate(60deg);
+    }
+  
+    .gt-50 & {
+      clip: rect(0, #{$circle-graph-size/2}, $circle-graph-size, 0);
+  
+      .circle-graph-progress-fill {
+        clip: rect(0, $circle-graph-size, $circle-graph-size, #{$circle-graph-size/2});
+        background: $circle-graph-empty-color;
+      }
+    }
+  }
+  .circle-graph-percents {
+    @include circle-graph-circle(#{$circle-graph-size/1.45});
+    background: $circle-graph-background-color;
+    text-align: center;
+    display: table;
+    z-index: 4;
+  
+    .circle-graph-percents-number {
+      display: block;
+      font-size: $circle-graph-percent-number-size;
+      font-weight: bold;
+      color: $circle-graph-fill-color;
+    }
+  
+    .circle-graph-percents-units {
+      display: block;
+      font-size: $circle-graph-percent-unit-size;
+      font-weight: bold;
+    }
+  }
+  .circle-graph-percents-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 0;
+  
+    span {
+      line-height: 1;
+    }
+  }
+  
+  
