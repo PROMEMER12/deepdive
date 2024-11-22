@@ -1,2 +1,2 @@
 # deepdive
-deepdive bit-academy
+deepdive on bit academy
