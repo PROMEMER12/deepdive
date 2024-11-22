@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Bit Bootstrap</title>
+  </head>
+  <body id="container">
+<style>
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+  }
+  
+  .my-custom-row {
+    display: flex;
+    background-color: rgb(255, 174, 0);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .navbar-inner {
+    background-color: transparent;
+  }
+  .navbar-toggler-icon {
+        background-color: black;
+      }
+
+      .navbar-dark .navbar-nav .nav-link {
+        color: black;
+      }
+
+ 
+      .navbar-dark .navbar-nav .nav-link:hover {
+        color: #333; 
+      }
+
+
+      .navbar-dark .navbar-nav .nav-link.active {
+        color: #000; 
+        font-weight: bold; 
+      }
+
+      .h1 {
+        color: #333; 
+      }
+  .my-custom-row3 {
+    display: flex;
+    background-color: rgb(255, 221, 0);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: -20px;
+    left: 0px;
+    z-index: 1000;
+    padding: 20px;
+  }
+  
+  .my-custom-row h1,
+  .my-custom-row h6 {
+    margin-bottom: 20px;
+  }
+  
+
+  
+
+  .hero_img__wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 767px) {
+    .my-custom-row .col-sm-4 {
+      text-align: center;
+    }
+  
+    .hero_img__wrapper img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .d-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    button {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
+  .btn-sm {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  
+  .changedcolor {
+    background-color: rgb(255, 174, 0);
+  }
+
+ 
+.logos-grid {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 20px; 
+    animation: scroll 10s linear infinite; 
+  }
+  
+  .p-logo-2 {
+    flex-shrink: 0; 
+    width: auto; 
+  }
+  
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); 
+    }
+  }
+  
+ 
+  .scroll-wrapper {
+    overflow: hidden; 
+  }
+  
+  .scrolling-wrapper {
+    display: flex; 
+    animation: scroll 20s linear infinite; 
+  }
+  
+  .scroll-wrapper .logos-grid img {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+  }
+  
+  .scroll-wrapper .logos-grid img.fade-out {
+    opacity: 0; 
+  }
+  
+
+
+
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+  
+
+  .navbar-dark.bg-transparent {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+
+  .d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+  }
+  
+
+  .my-custom-row {
+    display: flex;
+    background-color: rgb(255, 174, 0);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+ 
+  .navbar-inner {
+    background-color: transparent;
+  }
+  
+
+  .my-custom-row3 {
+    display: flex;
+    background-color: rgb(255, 221, 0);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+
+  .my-custom-row h6 {
+    margin-bottom: 20px;
+  }
+
+  .btn-invert {
+    background-color: rgb(118, 113, 103);
+    color: white;
+    padding: 0px;
+  }
+  
+  .btn-invert:hover {
+    filter: invert(1);
+    color: black;
+  }
+  
+
+  .hero_img__wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+  @media (max-width: 767px) {
+    .my-custom-row .col-sm-4 {
+      text-align: center;
+    }
+  
+    .hero_img__wrapper img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .d-flex {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    button {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
+
+  .btn-sm {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  
+ 
+  .changedcolor {
+    background-color: rgb(255, 174, 0);
+  }
+  
+
+  .logos-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    animation: scroll 10s linear infinite; 
+  }
+  
+  .p-logo-2 {
+    flex-shrink: 0; 
+    width: auto; 
+  }
+  
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+
+  .scroll-wrapper {
+    overflow: hidden; 
+  }
+  
+  .scrolling-wrapper {
+    display: flex;
+    animation: scroll 20s linear infinite;
+  }
+  
+  .scroll-wrapper .logos-grid img {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+  }
+  
+  .scroll-wrapper .logos-grid img.fade-out {
+    opacity: 0;
+  }
+  
+
+
+#container {
+    position: relative;
+    background-color: #99c2f8;
+    background-image: url('earth.png'), url('blackimg.png'), url('stars.png');
+    background-size: cover, cover, cover; 
+    background-position: center, top, bottom; 
+    background-attachment: fixed; 
+    height: 100vh;
+    width: 100vw; 
+    overflow-x: hidden;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar, .my-custom-row, .projects, .section, .container {
+    position: relative;  
+    z-index: 10;       
+}
+
+
+.projects {
+    padding: 20px;
+    background-color: rgb(255, 255, 255); 
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.my-custom-row {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.my-custom-row2 {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+</style>
+   
+    <div class="bg-primary">
+      <div class="row my-custom-row">
+        <nav class="navbar navbar-dark bg-transparent">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="bitacedemyimg.png" alt="" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="mbohbo.html">MBO/HBO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proopleiding.html">Pro opleidingen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manifest.html">manifest</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.google.nl/maps/place/Bit+Academy/@52.3557879,4.8389113,532m/data=!3m2!1e3!4b1!4m6!3m5!1s0x47c609ec65da959f:0x25bcf6bb45256f7e!8m2!3d52.3557879!4d4.8414862!16s%2Fg%2F11j2nm39fl?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D">Locatie</a>
+                        </li>
+
+                      
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="col-12 col-sm-6">
+          <div class="p-3">
+            <h5>[toekomst]_ready!</h5>
+            <h1>Boost je tech-carrière met Bit Academy</h1>
+            <h5>
+              Bij ons volg je het beste tech-onderwijs. Of je nu al technische kennis hebt en je deze
+              wilt uitbreiden of juist helemaal vanaf het begin start: wij helpen je om je doelen te
+              behalen.
+            </h5>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          <div
+            id="w-node-c5ad2c94-48d8-76a9-e79b-4a5e895effe4-a42eff8f"
+            class="hero_img__wrapper"
+          >
+            <img
+              src="monkey.png"
+              loading="lazy"
+              alt="Hero Image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row my-custom-row2 justify-content-center align-items-center">
+        <div class="col-sm-12"><h5>Onze studenten werken nu bij:</h5></div>
+        <div class="col-sm-8">
+          <div class="p-0.6 border bg-dark"></div>
+          <div class="section bg-color--greyscale">
+            <div class="space__40px"></div>
+            <div class="container--old is--logo-container w-container">
+              <div class="w-layout-grid row">
+                <div id="w-node-fea7c0dd-7da2-e314-20bb-5b6a8ac20173-8ac2016f" class="logos_heading__wrapper">
+                  <div class="mobile_space-4px"></div>
+                </div>
+                <div id="w-node-fea7c0dd-7da2-e314-20bb-5b6a8ac20177-8ac2016f" class="scroll-wrapper type-2">
+                  <div class="scrolling-wrapper">
+                    <div class="w-layout-grid logos-grid">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/645226221cfb983fcf1d13b9_Duolingo.svg" loading="lazy" width="83" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/6452262269962c9acd8ad9b8_Spotify.svg" loading="lazy" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/64522621fab8bd82335d7fb6_Schiphol.svg" loading="lazy" width="80" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/645226213763d71d3c7f5419_NS.svg" loading="lazy" width="50" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/645226213563198d35f247bc_Vattenfall.svg" loading="lazy" width="120" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/643642f72edba83368288525_Group%2087.png" loading="lazy" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/6452262178cec90570e3565d_ING.svg" loading="lazy" width="85" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/64522621b6cfe15f4d026eb3_Transavia.svg" loading="lazy" width="100" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/645226214af3f5ea7e0aa221_Unilever.svg" loading="lazy" width="85" alt="" class="p-logo-2">
+                      <img src="https://cdn.prod.website-files.com/6433e2279fd61134d70bd465/645226213a4dd662793a1e83_Philips.svg" loading="lazy" width="85" alt="" class="p-logo-2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="space__40px"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+
+    document.addEventListener("mousemove", parallax);
+
+ 
+    const container = document.querySelector("#container");
+
+    function parallax(e) {
+        let _w = window.innerWidth / 2; 
+        let _h = window.innerHeight / 2; 
+        let _mouseX = e.clientX;  
+        let _mouseY = e.clientY; 
+
+
+        let _depth1 = `${50 - (_mouseX - _w) * 0.05}% ${50 - (_mouseY - _h) * 0.05}%`;
+        let _depth2 = `${50 - (_mouseX - _w) * 0.1}% ${50 - (_mouseY - _h) * 0.1}%`;
+        let _depth3 = `${50 - (_mouseX - _w) * 0.2}% ${50 - (_mouseY - _h) * 0.02}%`;
+
+        container.style.backgroundPosition = `${_depth3}, ${_depth2}, ${_depth1}`;
+    }
+})();
+
+
+
+    </script>
+    <div class="container text-center">
+        <h1 class="m-3"></h1>
+        <div class="row g-3">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="label__small">Certificate</div>
+                        <h3 class="_4xl-sm">Front-end <br>Developer</h3>
+                        <p class="card-text">
+                        <div class="text__small">Als Front-end Developer houd je je bezig met de voorkant van
+                            webapplicaties. Je zorgt ervoor dat de data en logica vanuit de backend zichtbaar en
+                            bruikbaar zijn voor bezoekers.</div>
+                        </p>
+                        <a class="btn btn-outline-primary" href="frontend.html">lees meer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="label__small">Certificate</div>
+                        <h3 class="_4xl-sm">Back-end<br>Developer</h3>
+                        <p class="card-text">
+                            Als Back-end Developer ben je verantwoordelijk voor het ontwikkelen van
+                            de software die op de server draait en voor het afhandelen van verzoeken en antwoorden
+                            tussen de front-end en de server-side.
+                        </p>
+                        <a class="btn btn-outline-primary" href="Backend.html">lees meer</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="label__small">Certificate</div>
+                        <h3 class="_4xl-sm">Full Stack Web <br>Developer</h3>
+                        <p class="card-text">Als Full Stack Web Developer ontwikkel je (onderdelen van) programma's of
+                            websites. Jij zorgt ervoor dat ze werken en veilig zijn. Het gaat niet alleen om het mak...
+                        </p>
+                        <a class="btn btn-outline-primary" href="fullstack.html">lees meer</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="label__small">Certificate</div>
+                        <h5 class="card-title">Data analist</h5>
+                        <p class="card-text">als data analist ben je verantwoordelijk voor het analyseren van data en het vertalen van deze inzichten naar informatie die nuttig is voor de business </p>
+                        <a class="btn btn-outline-primary" href="dataanalyst.html">lees meer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="label__small">Certificate</div>
+                        <h5 class="card-title">Data engineer</h5>
+                        <p class="card-text">als data engineer help jij  een bedrijf met het maken van keuzes op basis van data. door middel van het verzamelen, verbeteren en visualiseren van data help je andere afdelingen maximaal te presteren </p>
+                        <a class="btn btn-outline-primary" href="dataengineer.html">lees meer</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="label__small">Certificate</div>
+                        <h5 class="card-title">ChatGPT expert</h5>
+                        <p class="card-text">Als ChatGPT-cursist leer je hoe je een bedrijf kunt ondersteunen met behulp van AI-tekstgeneratie. Door het begrijpen, aanpassen en implementeren van ChatGPT kun je straks bijdragen aan bijvoorbeeld klantenservice, contentcreatie en procesautomatisering.</p>
+                        <a class="btn btn-outline-primary" href="chatgptexpert.html">lees meer</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bg-primary">
+      <div class="row my-custom-row">
+    <div class="col-12 col-sm-6">
+      <div class="p-3">
+        <h2>Wij geloven in
+          nieuw onderwijs</h2>
+        <h4>Bit Academy is de beste ICT-opleider van Nederland. Wat ons uniek maakt? Wij zijn zelf programmeurs en hebben zelf de code geschreven die jou code leert schrijven.
+
+          Aan het eind van de rit moet jij klaar kunnen staan voor de wereld van nu én de toekomst. Geef jouw tech-carrière een kick-start met een van de ICT-opleidingen van Bit Academy.</h4>
+      </div>
+    </div>
+  </div>
+</div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    ></script>
+  </body>
+</html>
