@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kalender</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <section class="hero is-medium hero-image">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+
+      
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html">
+                Kalender
+              </a>
+        
+              <a class="navbar-item"  href="oldkalender.html">
+                Oude Kalender
+              </a>
+        
+           
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary" id="sign-up-btn">
+                  <strong>Sign up</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="modal" id="signup-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Sign Up</p>
+            <button class="delete" aria-label="close" id="close-modal"></button>
+          </header>
+          <section class="modal-card-body">
+            <form action="/signup" method="post">
+      
+              <div class="field">
+                <label class="label">Full Name</label>
+                <div class="control">
+                  <input class="input" type="text" name="full_name" placeholder="John Doe" required>
+                </div>
+              </div>
+    
+      
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input class="input" type="email" name="email" placeholder="example@email.com" required>
+                </div>
+              </div>
+    
+         
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                  <input class="input" type="password" name="password" placeholder="********" required>
+                </div>
+              </div>
+    
+    
+              <div class="field">
+                <label class="label">Confirm Password</label>
+                <div class="control">
+                  <input class="input" type="password" name="confirm_password" placeholder="********" required>
+                </div>
+              </div>
+    
+        
+              <div class="field">
+                <div class="control">
+                  <button class="button is-primary is-fullwidth">Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button" id="close-modal-footer">Cancel</button>
+          </footer>
+        </div>
+      </div>
+
+    
+      <script>
+        const openModalButton = document.getElementById('sign-up-btn');
+        const closeModalButtons = document.querySelectorAll('#close-modal, #close-modal-footer');
+        const modal = document.getElementById('signup-modal');
+    
+        openModalButton.addEventListener('click', () => {
+          modal.classList.add('is-active');
+        });
+    
+        closeModalButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            modal.classList.remove('is-active');
+          });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+
+
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+
+$navbarBurgers.forEach( el => {
+  el.addEventListener('click', () => {
+
+   
+    const target = el.dataset.target;
+    const $target = document.getElementById(target);
+
+    
+    el.classList.toggle('is-active');
+    $target.classList.toggle('is-active');
+
+  });
+});
+
+});
+      </script>
+      <div class="hero-body">
+        <p class="title has-text-white">Kalender</p>
+        <p class="subtitle has-text-white">Nieuw</p>
+      </div>
+    </section>
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">kalender</h1>
+
+      <div class="field has-text-centered">
+        <button class="button is-info" id="previous-week-button">Previous Week</button>
+        <button class="button is-info" id="next-week-button">Next Week</button>
+      </div>
+
+      <div class="field has-text-centered">
+        <button class="button is-primary" id="add-task-button">Add Task</button>
+      </div>
+
+      <div class="field has-text-centered">
+        <button class="button is-danger" id="clear-all-tasks">Clear All Tasks</button>
+      </div>
+
+      <div id="task-input-form" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box">
+            <h2 class="title">Add Task</h2>
+
+            <div class="field">
+              <label class="label">Task Description</label>
+              <div class="control">
+                <input class="input is-medium" type="text" id="task-description" placeholder="Enter Task Description">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Priority</label>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="priority" value="important" id="task-important"> Weekdoel
+                </label>
+                <label class="radio">
+                  <input type="radio" name="priority" value="normal" checked id="task-normal"> Normal
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button class="button is-primary" id="save-task">Save Task</button>
+                <button class="button is-light" id="close-task-form">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table is-bordered is-fullwidth is-striped is-narrow">
+          <thead>
+            <tr id="time-header">
+          
+            </tr>
+          </thead>
+          <tbody id="time-slots">
+     
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box">
+        <h2 class="title is-4">Task Bar</h2>
+        <div id="task-list">
+     
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const previousWeekButton = document.getElementById('previous-week-button');
+    const nextWeekButton = document.getElementById('next-week-button');
+    const timeSlots = document.getElementById('time-slots');
+    const timeHeader = document.getElementById('time-header');
+    const taskList = document.getElementById('task-list');
+    const taskDescriptionInput = document.getElementById('task-description');
+    const addTaskButton = document.getElementById('add-task-button');
+    const saveTaskButton = document.getElementById('save-task');
+    const closeTaskFormButton = document.getElementById('close-task-form');
+    const taskInputForm = document.getElementById('task-input-form');
+    const clearAllTasksButton = document.getElementById('clear-all-tasks');
+
+    let currentStartDate = new Date();
+    let currentWeekDates = [];
+    let selectedDate = '';
+    let selectedTimeSlot = '';
+
+    function generateDaysOfWeek(startDate) {
+      const daysOfWeek = ['Week', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+      const startDay = new Date(startDate);
+      const startDayOfWeek = startDay.getDay(); 
+
+      const difference = startDayOfWeek === 0 ? -7 : 1 - startDayOfWeek;
+
+      currentWeekDates = [];
+      for (let i = 0; i < 7; i++) {
+        const day = new Date(startDay);
+        day.setDate(startDay.getDate() + difference + i);
+        currentWeekDates.push(day.toISOString().split('T')[0]);
+      }
+
+   
+      timeHeader.innerHTML = '';
+      daysOfWeek.forEach((day, index) => {
+        const th = document.createElement('th');
+        th.classList.add('has-text-centered');
+        
+     
+        if (index === 0) {
+          th.innerText = day;
+        } else {
+          const date = currentWeekDates[index - 1];
+          th.innerHTML = `${day} (${date.slice(5)})`; 
+        }
+
+        timeHeader.appendChild(th);
+      });
+
+      renderTimeSlots();
+    }
+
+    function renderTimeSlots() {
+      timeSlots.innerHTML = '';
+
+      for (let hour = 0; hour < 24; hour++) {
+        const timeString = `${String(hour).padStart(2, '0')}:00`;
+
+        const tr = document.createElement('tr');
+
+     
+        const timeCell = document.createElement('td');
+        timeCell.classList.add('has-text-centered');
+        timeCell.innerText = timeString;
+        tr.appendChild(timeCell);
+
+        
+        currentWeekDates.forEach((date) => {
+          const td = document.createElement('td');
+          td.classList.add('has-text-centered');
+          td.setAttribute('data-date', date);
+          td.setAttribute('data-time', timeString);
+
+          td.addEventListener('click', () => {
+            selectedDate = date;
+            selectedTimeSlot = timeString;
+            taskInputForm.classList.add('is-active');
+          });
+
+          tr.appendChild(td);
+        });
+
+  
+        const weekCell = document.createElement('td');
+        weekCell.classList.add('has-text-centered');
+        weekCell.setAttribute('data-date', 'week');
+        weekCell.setAttribute('data-time', timeString);
+        weekCell.addEventListener('click', () => {
+          selectedDate = 'week';
+          selectedTimeSlot = timeString;
+          taskInputForm.classList.add('is-active');
+        });
+        tr.appendChild(weekCell);
+
+        timeSlots.appendChild(tr);
+      }
+    }
+
+    function saveTaskToLocalStorage(description, date, timeSlot, isImportant) {
+      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      const taskId = `task-${new Date().getTime()}`;
+      tasks.push({ id: taskId, description, date, timeSlot, isImportant, isFinished: false });
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+
+      renderTasks();
+    }
+
+    function renderTasks() {
+      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+
+      currentWeekDates.forEach(date => {
+        const cells = document.querySelectorAll(`[data-date="${date}"]`);
+        cells.forEach(cell => {
+          cell.innerHTML = '';
+        });
+      });
+
+      tasks.forEach(task => {
+        const { id, description, date, timeSlot, isImportant, isFinished } = task;
+        if (currentWeekDates.includes(date) || date === 'week') {
+          const cell = document.querySelector(`[data-date="${date}"][data-time="${timeSlot}"]`);
+          if (cell) {
+            const taskDiv = document.createElement('div');
+            taskDiv.classList.add('box', 'is-small', 'has-text-centered');
+            if (isImportant) taskDiv.classList.add('has-background-warning');
+            if (isFinished) taskDiv.classList.add('has-background-success');
+
+            taskDiv.innerHTML = `
+              <div>${description}</div>
+              <button class="delete is-small delete-task" data-id="${id}"></button>
+              <button class="button is-small is-success mark-finished" data-id="${id}">Coach review</button>
+            `;
+
+            taskDiv.querySelector('.delete').addEventListener('click', (e) => {
+              const taskId = e.target.getAttribute('data-id');
+              removeTaskFromLocalStorage(taskId);
+            });
+
+            taskDiv.querySelector('.mark-finished').addEventListener('click', (e) => {
+              const taskId = e.target.getAttribute('data-id');
+              markTaskAsFinished(taskId);
+            });
+
+            cell.appendChild(taskDiv);
+          }
+        }
+      });
+
+      taskList.innerHTML = ''; 
+
+      tasks.forEach(task => {
+        const { id, description, isImportant, isFinished } = task;
+        const taskDiv = document.createElement('div');
+        taskDiv.classList.add('task-bar-item', 'notification', 'is-small');
+        if (isImportant) taskDiv.classList.add('has-background-warning');
+        if (isFinished) taskDiv.classList.add('has-background-success');
+
+        taskDiv.innerHTML = `
+          <span>${description}</span>
+          <button class="delete is-small delete-task" data-id="${id}"></button>
+          <button class="button is-small is-success mark-finished" data-id="${id}">Coach review</button>
+        `;
+
+        taskDiv.querySelector('.delete').addEventListener('click', (e) => {
+          const taskId = e.target.getAttribute('data-id');
+          removeTaskFromLocalStorage(taskId);
+        });
+
+        taskDiv.querySelector('.mark-finished').addEventListener('click', (e) => {
+          const taskId = e.target.getAttribute('data-id');
+          markTaskAsFinished(taskId);
+        });
+
+        taskList.appendChild(taskDiv);
+      });
+    }
+
+    function markTaskAsFinished(taskId) {
+      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      const task = tasks.find(task => task.id === taskId);
+      if (task) {
+        task.isFinished = true;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        renderTasks();
+      }
+    }
+
+    function removeTaskFromLocalStorage(taskId) {
+      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      tasks = tasks.filter(task => task.id !== taskId);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      renderTasks();
+    }
+
+    function clearAllTasks() {
+      localStorage.removeItem('tasks');
+      renderTasks();
+    }
+
+    generateDaysOfWeek(currentStartDate);
+
+    previousWeekButton.addEventListener('click', () => {
+      currentStartDate.setDate(currentStartDate.getDate() - 7);
+      generateDaysOfWeek(currentStartDate);
+      renderTasks();
+    });
+
+    nextWeekButton.addEventListener('click', () => {
+      currentStartDate.setDate(currentStartDate.getDate() + 7);
+      generateDaysOfWeek(currentStartDate);
+      renderTasks();
+    });
+
+    addTaskButton.addEventListener('click', () => {
+      taskInputForm.classList.add('is-active');
+    });
+
+    closeTaskFormButton.addEventListener('click', () => {
+      taskInputForm.classList.remove('is-active');
+    });
+
+    saveTaskButton.addEventListener('click', () => {
+      const description = taskDescriptionInput.value;
+      const isImportant = document.getElementById('task-important').checked;
+      saveTaskToLocalStorage(description, selectedDate, selectedTimeSlot, isImportant);
+      taskDescriptionInput.value = '';
+      taskInputForm.classList.remove('is-active');
+    });
+
+    clearAllTasksButton.addEventListener('click', clearAllTasks);
+
+    renderTasks();
+  </script>
+</body>
+</html>
+<style>
+    .hero-image {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("somethinglol.png");
+        height: 50%;
+        background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>

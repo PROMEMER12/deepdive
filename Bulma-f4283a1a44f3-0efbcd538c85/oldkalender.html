@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kalender</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <section class="hero is-medium hero-image">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="#">
+    
+          
+              </a>
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item" href="index.html">
+                  Kalender
+                </a>
+          
+                <a class="navbar-item"  href="oldkalender.html">
+                  Oude Kalender
+                </a>
+          
+               
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons" id="sign-up-btn">
+                    <a class="button is-primary">
+                      <strong>Sign up</strong>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div class="hero-body">
+            <p class="title has-text-white">Kalender</p>
+            <p class="subtitle has-text-white">Oud</p>
+          </div>
+        </section>
+        <div class="container">
+            <h1 class="title has-text-centered">Interactive Calendar</h1>
+    
+
+            <div class="field">
+              <label class="label">Enter Date</label>
+              <div class="control">
+                <input class="input is-medium" type="date" id="calendar-date" placeholder="Select Date">
+              </div>
+            </div>
+    
+            <div class="columns">
+         
+              <div class="column is-one-fifth">
+                <div class="box" id="time-list">
+                  <ul>
+                
+                  </ul>
+                </div>
+              </div>
+    
+       
+              <div class="column">
+                <div class="box" id="task-container">
+                  <p class="subtitle has-text-centered">Select a date to see tasks</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+
+        <div class="modal" id="task-modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <div class="box">
+              <h2 class="subtitle">Enter Task Details</h2>
+              <div class="field">
+                <label class="label">Task Description</label>
+                <div class="control">
+                  <input class="input" type="text" id="task-description" placeholder="What is the task?">
+                </div>
+              </div>
+              <div class="field is-grouped is-grouped-right">
+                <p class="control">
+                  <button class="button is-success" id="save-task">Save Task</button>
+                </p>
+                <p class="control">
+                  <button class="button is-danger" id="close-modal">Close</button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+    
+        <script>
+  
+          const dateInput = document.getElementById('calendar-date');
+          const timeList = document.getElementById('time-list');
+          const taskContainer = document.getElementById('task-container');
+          const modal = document.getElementById('task-modal');
+          const saveTaskButton = document.getElementById('save-task');
+          const closeModalButton = document.getElementById('close-modal');
+          const taskDescriptionInput = document.getElementById('task-description');
+          let selectedTimeSlot = null;
+          let selectedDate = '';
+    
+       
+          function generateTimeSlots() {
+            for (let hour = 0; hour < 24; hour++) {
+              const timeString = `${String(hour).padStart(2, '0')}:00`;
+    
+        
+              const listItem = document.createElement('li');
+              listItem.classList.add('has-text-left');
+              listItem.innerHTML = `
+                <div class="columns">
+                  <div class="column is-narrow">
+                    <span>${timeString}</span>
+                  </div>
+                  <div class="column">
+                    <button class="button is-small is-primary is-fullwidth is-hidden" data-time="${timeString}">Add Task</button>
+                  </div>
+                </div>
+              `;
+    
+           
+              listItem.querySelector('button').addEventListener('click', () => {
+                openTaskModal(timeString);
+              });
+    
+              timeList.querySelector('ul').appendChild(listItem);
+            }
+          }
+    
+     
+          function openTaskModal(time) {
+            selectedTimeSlot = time;
+            taskDescriptionInput.value = '';
+            modal.classList.add('is-active');
+          }
+    
+      
+          closeModalButton.addEventListener('click', () => {
+            modal.classList.remove('is-active');
+          });
+    
+
+          saveTaskButton.addEventListener('click', () => {
+            const description = taskDescriptionInput.value.trim();
+            if (description) {
+         
+              const taskDiv = document.createElement('div');
+              taskDiv.classList.add('box');
+              taskDiv.innerHTML = `
+                <p><strong>${selectedTimeSlot}:</strong> ${description}</p>
+                <button class="button is-small is-danger is-fullwidth" onclick="removeTask(this)">Remove</button>
+              `;
+    
+           
+              taskContainer.appendChild(taskDiv);
+    
+          
+              modal.classList.remove('is-active');
+    
+         
+              const timeListItem = timeList.querySelector(`li:has(button[data-time="${selectedTimeSlot}"])`);
+              if (timeListItem) {
+                timeListItem.querySelector('button').classList.remove('is-hidden');
+              }
+            }
+          });
+    
+     
+          function removeTask(button) {
+            const taskDiv = button.closest('.box');
+            taskDiv.remove();
+    
+
+            const timeSlot = taskDiv.querySelector('strong').textContent.split(':')[0] + ':00';
+            const timeListItem = timeList.querySelector(`li:has(button[data-time="${timeSlot}"])`);
+            if (timeListItem) {
+              timeListItem.querySelector('button').classList.remove('is-hidden');
+            }
+          }
+    
+   
+          dateInput.addEventListener('input', () => {
+            selectedDate = dateInput.value;
+            taskContainer.innerHTML = `<p class="subtitle has-text-centered">Tasks for ${selectedDate}</p>`;
+            
+           
+            const allAddButtons = timeList.querySelectorAll('button');
+            allAddButtons.forEach(button => button.classList.remove('is-hidden'));
+          });
+    
+      
+          generateTimeSlots();
+        </script>
+      </body>
+    </html>
+<style>
+    .hero-image {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("somethinglol.png");
+        height: 50%;
+        background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>
