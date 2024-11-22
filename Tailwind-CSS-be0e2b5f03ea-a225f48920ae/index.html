@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roblox</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@heroicons/react@2.0.13/outline.min.js"></script>
+</head>
+<body class="bg-gray-100">
+
+  <nav class="bg-white fixed w-full shadow-md z-50">
+    <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center h-14">
+      <div class="flex items-center space-x-4">
+        <button id="menuToggle" class="p-2 hover:bg-gray-100 rounded-full focus:outline-none">
+          <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+        <a href="#" class="flex items-center space-x-1">
+          <img src="robloxicon.png" alt="Logo" class="h-6">
+        </a>
+        <a href="#" class="flex items-center space-x-1">
+            <h2 class="h-6 text-gray-400 Oswald font-medium">Home</h2>
+          </a>
+          <a href="#" class="flex items-center space-x-1">
+            <h2 class="h-6 text-gray-400 Oswald font-medium">Charts</h2>
+          </a>
+          <a href="#" class="flex items-center space-x-1">
+            <h2 class="h-6 text-gray-400 Oswald font-medium">Catalog</h2>
+          </a>
+          <a href="#" class="flex items-center space-x-1">
+            <h2 class="h-6 text-gray-400 Oswald font-medium">Create</h2>
+          </a>
+      </div>
+
+      <div class="hidden lg:flex items-center w-1/2">
+        <input
+          type="text"
+          placeholder="Search"
+          class="w-full px-3 py-2 text-sm border border-gray-100 rounded-l-full focus:outline-none focus:ring-1 focus:ring-gray-400"
+        >
+      </div>
+      <div class="flex items-center space-x-4">
+        <button class="p-2 hover:bg-gray-100 rounded-full focus:outline-none">
+
+          <img src="notifications.png" alt="Logo" class="h-6">
+        </button>
+        <button class="p-2 hover:bg-gray-100 rounded-full focus:outline-none">
+            <img src="friends.png" alt="Logo" class="h-6">
+        </button>
+        <button class="p-2 hover:bg-gray-100 rounded-full focus:outline-none">
+          <img src="messages.png" alt="Profile" class="h-8 w-8 rounded-full">
+        </button>
+        <button class="p-2 hover:bg-gray-100 rounded-full focus:outline-none">
+            <img src="robuxicon.png" alt="Profile" class="h-8 w-8 rounded-full">
+          </button>
+          <button class="p-2 hover:bg-gray-100 rounded-full focus:outline-none">
+            <img src="settings.png" alt="Profile" class="h-8 w-8 rounded-full">
+          </button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="sidebar" class="fixed top-14 left-0 h-full bg-white w-64 shadow-md transform -translate-x-64 transition-transform duration-300">
+    <ul class="mt-4">
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="robloxhomeicon.png" alt="Home">
+        <a href="#" class="block">Home</a>
+      </li>
+      
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="robloxprofileicon.png" alt="Trending">
+        <a href="#" class="block">Profile</a>
+      </li>
+  
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="messages.png" alt="Subscriptions">
+        <a href="#" class="block">Messages</a>
+      </li>
+  
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="avatar.png" alt="Library">
+        <a href="#" class="block">Avatar</a>
+      </li>
+
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="inventory.png" alt="Library">
+        <a href="#" class="block">Inventory</a>
+      </li>
+
+
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="trade.png" alt="Library">
+        <a href="#" class="block">Trade</a>
+      </li>
+
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="transactions.png" alt="Library">
+        <a href="#" class="block">Transactions</a>
+      </li>
+
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="groups.png" alt="Library">
+        <a href="#" class="block">Groups</a>
+      </li>
+
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="blog.png" alt="Library">
+        <a href="#" class="block">Blog</a>
+      </li>
+
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="oficialstore.png" alt="Library">
+        <a href="#" class="block">Official Store</a>
+      </li>
+
+      <li class="flex items-center px-4 py-2 hover:bg-gray-100">
+        <img class="h-6 w-6 text-gray-600 mr-3" src="giftcards.png" alt="Library">
+        <a href="#" class="block">Gift Cards</a>
+      </li>
+    </ul>
+  </div>
+  <div class="pt-14 pl-0 lg:pl-64 transition-all duration-300">
+    <div class="p-4">
+        <button class="p-2 hover:bg-gray-100 rounded-full focus:outline-none">
+            <img src="robloxavATARICONmaybebetter.png" alt="Profile" class="h-40 w-40 rounded-full">
+          </button>
+          <h1 class="text-4xl font-bold">Welcome, UVDev</h1>
+    </div>
+  </div>
+  
+
+  <div class="pt-5 pl-0 lg:pl-10 transition-all duration-200">
+    <div class="p-3">
+      <h1 class="text-2xl font-bold">Friends[200]</h1>
+      <div class="overflow-x-auto whitespace-nowrap border p-4 rounded-lg bg-white shadow-md">
+        <div class="flex items-center space-x-4">
+          <div class="text-center">
+            <img src="sal.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Jollyvekens</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="gaming.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-lime-600 Oswald font-medium">[PERFECTION] Jujutsu Shenanigans</p>
+            </div>
+          </div>
+  
+ 
+          <div class="text-center">
+            <img src="alex.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">AlexAmber05</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="gaming.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-lime-600 Oswald font-medium">Build a boat for treasure</p>
+            </div>
+          </div>
+  
+          
+          <div class="text-center">
+            <img src="hendrik.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Thegoodman189</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="gaming.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-lime-600 Oswald font-medium">PETS GO! ✨ Jelly Egg!</p>
+            </div>
+          </div>
+  
+       
+          <div class="text-center">
+            <img src="jarno.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">V_Riety</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="gaming.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-lime-600 Oswald font-medium">PETS GO! ✨ Jelly Egg!</p>
+            </div>
+          </div>
+  
+    
+          <div class="text-center">
+            <img src="senn.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">woesjiskaas1</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="online.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+            </div>
+          </div>
+  
+  
+          <div class="text-center">
+            <img src="tokyo.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">TokyoRushh</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="online.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+            </div>
+          </div>
+  
+    
+          <div class="text-center">
+            <img src="tiki.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Senator_tiki1</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="online.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+            </div>
+          </div>
+  
+       
+          <div class="text-center">
+            <img src="tiki2.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Senator_tiki2</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="online.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+            </div>
+          </div>
+  
+      
+          <div class="text-center">
+            <img src="pepijn.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Pijntoh1</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="online.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+            </div>
+          </div>
+  
+   
+          <div class="text-center">
+            <img src="morl.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">morldev</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="online.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+            </div>
+          </div>
+  
+
+          <div class="text-center">
+            <img src="ADev.png" alt="Avatar" class="rounded-full h-20 w-20 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">ADev</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="online.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div class="pt-5 pl-0 lg:pl-10 transition-all duration-200">
+    <div class="p-3">
+      <h1 class="text-2xl font-bold">Recommended For You</h1>
+      <div class="overflow-x-auto border p-4 rounded-lg bg-white shadow-md">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          
+   
+          <div class="text-center">
+            <img src="sshowdown.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Saber Showdown</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">91% Rating</p>
+            </div>
+          </div>
+  
+          <div class="text-center">
+            <img src="saberbg.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Saber BG</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">89% Rating</p>
+            </div>
+          </div>
+  
+      
+          <div class="text-center">
+            <img src="saberforce.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Saberforce ⚔️</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">85% Rating</p>
+            </div>
+          </div>
+  
+    
+ 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="pt-5 pl-0 lg:pl-10 transition-all duration-200">
+    <div class="p-3">
+      <h1 class="text-2xl font-bold">Continue</h1>
+      <div class="overflow-x-auto whitespace-nowrap border p-4 rounded-lg bg-white shadow-md">
+        <div class="flex items-start space-x-4">
+          
+      
+          <div class="text-center">
+            <img src="saberbgthumb.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Saber BG</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">89%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+  
+  
+          <div class="text-center">
+            <img src="tsb.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">The Strongest Battlegrounds</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">83%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">88.4k</p>
+            </div>
+          </div>
+  
+     
+          <div class="text-center">
+            <img src="sabershowdownthumb.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Saber Showdown</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">91%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">978</p>
+            </div>
+          </div>
+  
+   
+          <div class="text-center">
+            <img src="rayengosling.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">RYAN GOSLING OBBY PARKOUR</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">85%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+  
+      
+          <div class="text-center">
+            <img src="ultimatebattlegrounds.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Ultimate Battlegrounds</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">81%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">7.4k</p>
+            </div>
+          </div>
+  
+  
+          <div class="text-center">
+            <img src="legendsbattlegrounds.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Legends Battlegrounds</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">80%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">2.9k</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <img src="chakra.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Chakra Battlegrounds [DEMO]</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">79%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">36</p>
+            </div>
+          </div>
+  
+          <div class="text-center">
+            <img src="shrekline.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Shrekline</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">81%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">229</p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="pt-5 pl-0 lg:pl-10 transition-all duration-200">
+    <div class="p-3">
+      <h1 class="text-2xl font-bold">Recommended For You</h1>
+      <div class="overflow-x-auto border p-4 rounded-lg bg-white shadow-md">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          
+   
+          <div class="text-center">
+            <img src="zombieattack.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Zombie Attack</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">94% Rating</p>
+            </div>
+          </div>
+  
+          <div class="text-center">
+            <img src="ninjago.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">[💎]Ninjitsu: Master of Elements</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">92% Rating</p>
+            </div>
+          </div>
+  
+      
+          <div class="text-center">
+            <img src="bombsurvival.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Super Bomb Survival</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">93% Rating</p>
+            </div>
+          </div>
+
+
+          <div class="text-center">
+            <img src="shootguy.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">[🦾 UPD] Shoot Players Off A Map Simulator</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">77% Rating</p>
+            </div>
+          </div>
+
+          
+          <div class="text-center">
+            <img src="themeparktycoon.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Theme Park Tycoon 2</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">88% Rating</p>
+            </div>
+          </div>
+
+                    
+          <div class="text-center">
+            <img src="ninjalegends.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">⚡Ninja Legends</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">92% Rating</p>
+            </div>
+          </div>
+  
+    
+ 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-5 pl-0 lg:pl-10 transition-all duration-200">
+    <div class="p-3">
+      <h1 class="text-2xl font-bold">Favorites</h1>
+      <div class="overflow-x-auto whitespace-nowrap border p-4 rounded-lg bg-white shadow-md">
+        <div class="flex items-start space-x-4">
+          
+      
+          <div class="text-center">
+            <img src="saberbgthumb.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Saber BG</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">89%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+  
+  
+          <div class="text-center">
+            <img src="sabergalaxy.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Saber Galaxy (NEW)</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">82%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+  
+     
+          <div class="text-center">
+            <img src="something.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Desert sandbox</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">100%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+  
+   
+          <div class="text-center">
+            <img src="jesus.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Favorite if you love Jesus UPDATES!</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">78%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+  
+      
+          <div class="text-center">
+            <img src="vrdisasters.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">VR Natural Disaster Survival</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">75%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+  
+  
+          <div class="text-center">
+            <img src="yes.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">[VR Exclusive] The Final Stand</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">86%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <img src="robloxthumb.png" alt="Avatar" class="h-60 w-60 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Mustafar (Showcase) Not Finished</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-3">
+              <p class="text-xs text-gray-600 Oswald font-medium">100%</p>
+              <img src="playercount.png" alt="Game Icon" class="rounded-full h-4 w-4">
+              <p class="text-xs text-gray-600 Oswald font-medium">0</p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="pt-5 pl-0 lg:pl-10 transition-all duration-200">
+    <div class="p-3">
+      <h1 class="text-2xl font-bold">Recommended For You</h1>
+      <div class="overflow-x-auto border p-4 rounded-lg bg-white shadow-md">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          
+   
+          <div class="text-center">
+            <img src="unboxinggame.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">[MOMENTUM] untitled boxing game🥊</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">86% Rating</p>
+            </div>
+          </div>
+  
+          <div class="text-center">
+            <img src="smoothslicing.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Smooth Slicing (NEW WEAPON)</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">68% Rating</p>
+            </div>
+          </div>
+  
+      
+          <div class="text-center">
+            <img src="combatwariors.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Combat Warriors 🩸</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">84% Rating</p>
+            </div>
+          </div>
+
+
+          <div class="text-center">
+            <img src="geonosis.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Star Wars: Battle of Geonosis</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">74% Rating</p>
+            </div>
+          </div>
+
+          
+          <div class="text-center">
+            <img src="battlegrounds.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">
+              [☀️SOLAR] Elemental Battlegrounds</h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">89% Rating</p>
+            </div>
+          </div>
+
+                    
+          <div class="text-center">
+            <img src="bloxfruits.png" alt="Avatar" class="h-60 w-50 mx-auto object-cover">
+            <h2 class="mt-2 font-semibold text-gray-700 text-sm truncate">Blox Fruits
+            </h2>
+            <div class="flex items-center justify-center space-x-2 mt-1">
+              <img src="thumbsup.png" alt="Game Icon" class="rounded-full h-5 w-5 object-cover">
+              <p class="text-xs text-gray-600 Oswald font-medium">92% Rating</p>
+            </div>
+          </div>
+  
+    
+ 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bg-gray-800 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
+        <div>
+          <h3 class="font-semibold">About Us</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Jobs</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Blog</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Parents</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Gift Cards</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Help</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Terms</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Accessibility</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Privacy</h3>
+        </div>
+        <div>
+          <h3 class="font-semibold">Your Privacy Choices</h3>
+        </div>
+      </div>
+      <div class="text-center mt-6 text-xs">
+        <p>©2024 Roblox Corporation. Roblox, the Roblox logo, and Powering Imagination are among our registered and unregistered trademarks in the U.S. and other countries.</p>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-64');
+    });
+  </script>
+</body>
+</html>
